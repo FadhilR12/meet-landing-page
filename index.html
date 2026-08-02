@@ -1,37 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Frontend Mentor | Meet landing page</title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="./output.css">
-  <title>Frontend Mentor | Meet landing page</title>
-</head>
-
-<body>
-  <section class="min-w-[375px] min-h-[screen] flex flex-col items-center">
-    <img class="w-[118px] mt-[48px] mb-[64px]" src="./assets/logo.svg" alt="Logo">
-    <div class="gap-[48px] flex flex-col items-center">
-        <img src="./assets/tablet/image-hero.png" alt="" class="">
+  <body class="min-w-[375px] min-h-[screen]">
+    <!-- Hero Mobile/Tablet -->
+    <section class="flex flex-col items-center lg:hidden">
+      <img
+        class="w-[118px] mt-[48px] mb-[64px]"
+        src="./assets/logo.svg"
+        alt="Logo"
+      />
+      <div class="gap-[48px] flex flex-col items-center">
+        <img src="./assets/tablet/image-hero.png" alt="" class="" />
 
         <!-- Hero text -->
-        <div class="gap-[24px] flex flex-col items-center w-[305px] text-center">
-            <p class="text-preset-1">Group Chat for Everyone</p>
-            <p>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</p>
+        <div
+          class="gap-[24px] flex flex-col items-center w-[305px] md:w-[400px] text-center"
+        >
+          <p class="text-preset-1-mobile md:text-preset-1-tablet font-bold">
+            Group Chat<br />
+            for Everyone
+          </p>
+          <p
+            class="text-preset-4-mobile md:text-preset-4-tablet text-slate-600"
+          >
+            Meet makes it easy to connect with others face-to-face virtually and
+            collaborate across any device.
+          </p>
 
-            <!-- Button -->
-            <div class="gap-[16px] flex flex-col text-white items-center">
-              <button class="bg-cyan-600 rounded-[29px] px-[40px] py-[16px]">
-                <span>Download</span>
-                <span class="text-cyan-300">v1.3</span>
-              </button>
-              <button class="bg-purple-600 rounded-[29px] w-fit px-[40px] py-[16px]">What is it?</button>
-            </div>
+          <!-- Button -->
+          <div
+            class="gap-[16px] flex flex-col md:flex-row text-white items-center mb-[32px] md:mb-[64px]"
+          >
+            <button class="bg-cyan-600 rounded-[29px] px-[40px] py-[16px]">
+              <span>Download</span>
+              <span class="text-cyan-300">v1.3</span>
+            </button>
+            <button
+              class="bg-purple-600 rounded-[29px] w-fit px-[40px] py-[16px]"
+            >
+              What is it?
+            </button>
+          </div>
         </div>
-    </div>
-  </section>
-</body>
+      </div>
+    </section>
 
+    <!-- Hero Desktop -->
+    <section class="flex flex-col hidden lg:flex items-center mb-[64px]">
+      <img
+        class="w-[118px] mt-[80px] mb-[64px]"
+        src="./assets/logo.svg"
+        alt="Logo"
+      />
+      <div
+        class="gap-[127px] flex flex-row pt-[64px] items-start overflow-hidden"
+      >
+        <!-- Left image -->
+        <div>
+          <img src="./assets/desktop/image-hero-left.png" alt="" class="" />
+        </div>
+
+        <!-- Hero text -->
+        <div
+          class="gap-[24px] flex flex-col items-center w-[470px] text-center"
+        >
+          <p class="text-preset-1-desktop font-bold">
+            Group Chat<br />
+            for Everyone
+          </p>
+          <p class="text-preset-4-desktop text-slate-600">
+            Meet makes it easy to connect with others face-to-face virtually and
+            collaborate across any device.
+          </p>
+
+          <!-- Button -->
+          <div
+            class="gap-[16px] flex flex-col md:flex-row text-white items-center mb-[32px] md:mb-[64px]"
+          >
+            <button class="bg-cyan-600 rounded-[29px] px-[40px] py-[16px]">
+              <span>Download</span>
+              <span class="text-cyan-300">v1.3</span>
+            </button>
+            <button
+              class="bg-purple-600 rounded-[29px] w-fit px-[40px] py-[16px]"
+            >
+              What is it?
+            </button>
+          </div>
+        </div>
+
+        <!-- Right image -->
+        <div>
+          <img src="./assets/desktop/image-hero-right.png" alt="" class="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 -->
+    <section class="flex flex-col items-center gap-[64px] mt-[32px] mb-[64px] lg:mb-[72px]">
+      <!-- number 01 -->
+      <img src="./assets/number.png" alt="" class="" />
+      <!-- image grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-[16px] w-[311px] md:w-[680px] lg:w-[1120px]">
+        <img
+          class="rounded-[10px]"
+          src="./assets/desktop/image-woman-in-videocall.jpg"
+          alt=""
+        />
+        <img
+          class="rounded-[10px]"
+          src="./assets/desktop/image-women-videochatting.jpg"
+          alt=""
+        />
+        <img
+          class="rounded-[10px]"
+          src="./assets/desktop/image-men-in-meeting.jpg"
+          alt=""
+        />
+        <img
+          class="rounded-[10px]"
+          src="./assets/desktop/image-man-texting.jpg"
+          alt=""
+        />
+      </div>
+      <!-- text 01 -->
+      <div class="flex flex-col gap-[32px] text-center w-[311px] items-center md:w-[504px] lg:w-[544px]">
+        <!-- title -->
+        <div class="gap-[16px] flex flex-col md:w-[445px]">
+          <p class="text-preset-3-mobile md:text-preset-3-tablet lg:text-preset-3-desktop font-bold text-cyan-600">
+            BUILT FOR MODERN USE
+          </p>
+          <p class="text-preset-2-mobile md:text-preset-2-tablet lg:text-preset-2-desktop font-bold">
+            Smarter meetings, all in one place
+          </p>
+        </div>
+        <!-- description -->
+        <p class="text-preset-4-mobile md:text-preset-4-tablet lg:text-preset-4-desktop text-slate-600">
+          Send messages, share files, show your screen, and record your meetings
+          — all in one workspace. Control who can join with invite-only team
+          access, data encryption, and data export.
+        </p>
+      </div>
+    </section>
+  </body>
 </html>

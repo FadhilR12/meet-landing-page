@@ -11,7 +11,9 @@
     --color-cyan-300: #8FE3F9;
     --color-cyan-600: #4D96A9;
     --color-purple-600: #855FB1;
+    --color-slate-600: #87879D;
     --color-white: #FAFAFA;
+    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-red-hat-display: "Red Hat Display", sans-serif;
@@ -166,8 +168,23 @@
   }
 }
 @layer utilities {
+  .mt-\[32px\] {
+    margin-top: 32px;
+  }
   .mt-\[48px\] {
     margin-top: 48px;
+  }
+  .mt-\[64\] {
+    margin-top: 64;
+  }
+  .mt-\[64px\] {
+    margin-top: 64px;
+  }
+  .mt-\[80px\] {
+    margin-top: 80px;
+  }
+  .mb-\[32px\] {
+    margin-bottom: 32px;
   }
   .mb-\[64px\] {
     margin-bottom: 64px;
@@ -180,6 +197,12 @@
   }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
   }
   .inline {
     display: inline;
@@ -196,17 +219,68 @@
   .w-\[305px\] {
     width: 305px;
   }
+  .w-\[311px\] {
+    width: 311px;
+  }
+  .w-\[375px\] {
+    width: 375px;
+  }
+  .w-\[400px\] {
+    width: 400px;
+  }
+  .w-\[450px\] {
+    width: 450px;
+  }
+  .w-\[470px\] {
+    width: 470px;
+  }
+  .w-\[1440px\] {
+    width: 1440px;
+  }
   .w-fit {
     width: fit-content;
+  }
+  .w-screen {
+    width: 100vw;
   }
   .min-w-\[375px\] {
     min-width: 375px;
   }
+  .min-w-\[400px\] {
+    min-width: 400px;
+  }
+  .min-w-\[440px\] {
+    min-width: 440px;
+  }
+  .min-w-\[450px\] {
+    min-width: 450px;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
+  .flex-row {
+    flex-direction: row;
+  }
   .items-center {
     align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-\[2px\] {
+    gap: 2px;
   }
   .gap-\[16px\] {
     gap: 16px;
@@ -214,8 +288,23 @@
   .gap-\[24px\] {
     gap: 24px;
   }
+  .gap-\[32px\] {
+    gap: 32px;
+  }
   .gap-\[48px\] {
     gap: 48px;
+  }
+  .gap-\[64px\] {
+    gap: 64px;
+  }
+  .gap-\[127px\] {
+    gap: 127px;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .rounded-\[10px\] {
+    border-radius: 10px;
   }
   .rounded-\[29px\] {
     border-radius: 29px;
@@ -236,24 +325,203 @@
   .py-\[16px\] {
     padding-block: 16px;
   }
+  .pt-\[64px\] {
+    padding-top: 64px;
+  }
   .text-center {
     text-align: center;
   }
-  .text-preset-1 {
+  .text-preset-1-desktop {
+    font-family: var(--font-red-hat-display);
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: 0px;
+  }
+  .text-preset-1-mobile {
     font-family: var(--font-red-hat-display);
     font-size: 40px;
     line-height: 1.1;
     letter-spacing: 0px;
   }
+  .text-preset-2-mobile {
+    font-family: var(--font-red-hat-display);
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: 0px;
+  }
+  .text-preset-3-mobile {
+    font-family: var(--font-red-hat-display);
+    font-size: 12px;
+    line-height: 1.1;
+    letter-spacing: 4px;
+  }
+  .text-preset-4-desktop {
+    font-family: var(--font-red-hat-display);
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+  }
+  .text-\[64px\] {
+    font-size: 64px;
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
   .text-cyan-300 {
     color: var(--color-cyan-300);
+  }
+  .text-cyan-600 {
+    color: var(--color-cyan-600);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
   }
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  @media (width >= 48rem) {
+    .md\:mb-\[64px\] {
+      margin-bottom: 64px;
+    }
+    .md\:w-\[6\] {
+      width: 6;
+    }
+    .md\:w-\[11\] {
+      width: 11;
+    }
+    .md\:w-\[400px\] {
+      width: 400px;
+    }
+    .md\:w-\[445px\] {
+      width: 445px;
+    }
+    .md\:w-\[448\.3\] {
+      width: 448.3;
+    }
+    .md\:w-\[448\.3px\] {
+      width: 448.3px;
+    }
+    .md\:w-\[450px\] {
+      width: 450px;
+    }
+    .md\:w-\[470px\] {
+      width: 470px;
+    }
+    .md\:w-\[500px\] {
+      width: 500px;
+    }
+    .md\:w-\[504px\] {
+      width: 504px;
+    }
+    .md\:w-\[680\] {
+      width: 680;
+    }
+    .md\:w-\[680px\] {
+      width: 680px;
+    }
+    .md\:w-\[1120\] {
+      width: 1120;
+    }
+    .md\:w-\[fit\] {
+      width: fit;
+    }
+    .md\:w-fit {
+      width: fit-content;
+    }
+    .md\:grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .md\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .md\:flex-row {
+      flex-direction: row;
+    }
+    .md\:text-preset-1-tablet {
+      font-family: var(--font-red-hat-display);
+      font-size: 48px;
+      line-height: 1.1;
+      letter-spacing: 0px;
+    }
+    .md\:text-preset-2-tablet {
+      font-family: var(--font-red-hat-display);
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: 0px;
+    }
+    .md\:text-preset-3-tablet {
+      font-family: var(--font-red-hat-display);
+      font-size: 14px;
+      line-height: 1.1;
+      letter-spacing: 4px;
+    }
+    .md\:text-preset-4-tablet {
+      font-family: var(--font-red-hat-display);
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0px;
+    }
+  }
+  @media (width >= 64rem) {
+    .lg\:mb-\[72px\] {
+      margin-bottom: 72px;
+    }
+    .lg\:mb-\[128px\] {
+      margin-bottom: 128px;
+    }
+    .lg\:flex {
+      display: flex;
+    }
+    .lg\:hidden {
+      display: none;
+    }
+    .lg\:w-\[504px\] {
+      width: 504px;
+    }
+    .lg\:w-\[544px\] {
+      width: 544px;
+    }
+    .lg\:w-\[720px\] {
+      width: 720px;
+    }
+    .lg\:w-\[1110px\] {
+      width: 1110px;
+    }
+    .lg\:w-\[1120px\] {
+      width: 1120px;
+    }
+    .lg\:text-preset-1-desktop {
+      font-family: var(--font-red-hat-display);
+      font-size: 64px;
+      line-height: 1.1;
+      letter-spacing: 0px;
+    }
+    .lg\:text-preset-2-desktop {
+      font-family: var(--font-red-hat-display);
+      font-size: 40px;
+      line-height: 1.1;
+      letter-spacing: 0px;
+    }
+    .lg\:text-preset-3-desktop {
+      font-family: var(--font-red-hat-display);
+      font-size: 16px;
+      line-height: 1.1;
+      letter-spacing: 4px;
+    }
+    .lg\:text-preset-4-desktop {
+      font-family: var(--font-red-hat-display);
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 0px;
+    }
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
@@ -261,6 +529,10 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-outline-style {
   syntax: "*";
@@ -271,6 +543,7 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-outline-style: solid;
     }
   }
