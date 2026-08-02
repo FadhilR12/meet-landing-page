@@ -9,11 +9,19 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-cyan-300: #8FE3F9;
+    --color-cyan-500: oklch(71.5% 0.143 215.221);
     --color-cyan-600: #4D96A9;
+    --color-cyan-900: oklch(39.8% 0.07 227.392);
+    --color-purple-500: oklch(62.7% 0.265 303.9);
     --color-purple-600: #855FB1;
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: #D1D1DF;
     --color-slate-600: #87879D;
+    --color-slate-900: #28283D;
     --color-white: #FAFAFA;
     --font-weight-bold: 700;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-red-hat-display: "Red Hat Display", sans-serif;
@@ -168,6 +176,21 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-0 {
+    inset: 0px;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .mt-\[32px\] {
     margin-top: 32px;
   }
@@ -182,6 +205,15 @@
   }
   .mt-\[80px\] {
     margin-top: 80px;
+  }
+  .-mb-\[25px\] {
+    margin-bottom: calc(25px * -1);
+  }
+  .-mb-\[50px\] {
+    margin-bottom: calc(50px * -1);
+  }
+  .-mb-\[64px\] {
+    margin-bottom: calc(64px * -1);
   }
   .mb-\[32px\] {
     margin-bottom: 32px;
@@ -210,14 +242,32 @@
   .table {
     display: table;
   }
+  .h-\[1px\] {
+    height: 1px;
+  }
+  .h-\[374px\] {
+    height: 374px;
+  }
+  .h-fit {
+    height: fit-content;
+  }
+  .h-full {
+    height: 100%;
+  }
   .min-h-\[screen\] {
     min-height: screen;
+  }
+  .w-\[31\] {
+    width: 31;
   }
   .w-\[118px\] {
     width: 118px;
   }
   .w-\[305px\] {
     width: 305px;
+  }
+  .w-\[311\] {
+    width: 311;
   }
   .w-\[311px\] {
     width: 311px;
@@ -239,6 +289,9 @@
   }
   .w-fit {
     width: fit-content;
+  }
+  .w-full {
+    width: 100%;
   }
   .w-screen {
     width: 100vw;
@@ -309,15 +362,120 @@
   .rounded-\[29px\] {
     border-radius: 29px;
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .bg-cyan-300 {
+    background-color: var(--color-cyan-300);
+  }
+  .bg-cyan-500 {
+    background-color: var(--color-cyan-500);
+  }
+  .bg-cyan-500\/55 {
+    background-color: color-mix(in srgb, oklch(71.5% 0.143 215.221) 55%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-500) 55%, transparent);
+    }
+  }
   .bg-cyan-600 {
     background-color: var(--color-cyan-600);
   }
+  .bg-cyan-600\/20 {
+    background-color: color-mix(in srgb, #4D96A9 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-600) 20%, transparent);
+    }
+  }
+  .bg-cyan-600\/50 {
+    background-color: color-mix(in srgb, #4D96A9 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-600) 50%, transparent);
+    }
+  }
+  .bg-cyan-600\/70 {
+    background-color: color-mix(in srgb, #4D96A9 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-600) 70%, transparent);
+    }
+  }
+  .bg-cyan-600\/80 {
+    background-color: color-mix(in srgb, #4D96A9 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-600) 80%, transparent);
+    }
+  }
+  .bg-cyan-900 {
+    background-color: var(--color-cyan-900);
+  }
+  .bg-cyan-900\/60 {
+    background-color: color-mix(in srgb, oklch(39.8% 0.07 227.392) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-900) 60%, transparent);
+    }
+  }
   .bg-purple-600 {
     background-color: var(--color-purple-600);
+  }
+  .bg-slate-900 {
+    background-color: var(--color-slate-900);
+  }
+  .bg-slate-900\/60 {
+    background-color: color-mix(in srgb, #28283D 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-900) 60%, transparent);
+    }
+  }
+  .bg-\[url\(\'\.\/assets\/mobile\/image-footer\.jpg\'\)\] {
+    background-image: url('./assets/mobile/image-footer.jpg');
+  }
+  .bg-\[url\(\)\] {
+    background-image: url();
+  }
+  .bg-\[url\(\.\/\)\] {
+    background-image: url(./);
+  }
+  .bg-\[url\(\.\/asset\)\] {
+    background-image: url(./asset);
+  }
+  .bg-\[url\(\.\/assets\)\] {
+    background-image: url(./assets);
+  }
+  .bg-\[url\(\.\/assets\/\)\] {
+    background-image: url(./assets/);
+  }
+  .bg-\[url\(\.\/assets\/mobile\)\] {
+    background-image: url(./assets/mobile);
+  }
+  .bg-\[url\(\.\/assets\/mobile\/\)\] {
+    background-image: url(./assets/mobile/);
+  }
+  .bg-\[url\(\.\/assets\/mobile\/image-footer\)\] {
+    background-image: url(./assets/mobile/image-footer);
+  }
+  .bg-\[url\(\.\/assets\/mobile\/image-footer\.\)\] {
+    background-image: url(./assets/mobile/image-footer.);
+  }
+  .bg-\[url\(\.\/assets\/mobile\/image-footer\.jpg\)\] {
+    background-image: url(./assets/mobile/image-footer.jpg);
+  }
+  .bg-\[url\(\/img\/mountains\.jpg\)\] {
+    background-image: url(/img/mountains.jpg);
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+  .px-\[32px\] {
+    padding-inline: 32px;
   }
   .px-\[40px\] {
     padding-inline: 40px;
@@ -325,11 +483,20 @@
   .py-\[16px\] {
     padding-block: 16px;
   }
+  .py-\[64px\] {
+    padding-block: 64px;
+  }
   .pt-\[64px\] {
     padding-top: 64px;
   }
+  .pb-\[48px\] {
+    padding-bottom: 48px;
+  }
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
   .text-preset-1-desktop {
     font-family: var(--font-red-hat-display);
@@ -361,6 +528,12 @@
     line-height: 1.5;
     letter-spacing: 0px;
   }
+  .text-preset-5 {
+    font-family: var(--font-red-hat-display);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+  }
   .text-\[64px\] {
     font-size: 64px;
   }
@@ -368,11 +541,20 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
   .text-cyan-300 {
     color: var(--color-cyan-300);
   }
   .text-cyan-600 {
     color: var(--color-cyan-600);
+  }
+  .text-slate-200 {
+    color: var(--color-slate-200);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
   }
   .text-slate-600 {
     color: var(--color-slate-600);
@@ -383,9 +565,49 @@
   .underline {
     text-decoration-line: underline;
   }
+  .opacity-\[40px\] {
+    opacity: 40px;
+  }
+  .bg-blend-darken {
+    background-blend-mode: darken;
+  }
+  .bg-blend-hard-light {
+    background-blend-mode: hard-light;
+  }
+  .bg-blend-luminosity {
+    background-blend-mode: luminosity;
+  }
+  .bg-blend-multiply {
+    background-blend-mode: multiply;
+  }
+  .bg-blend-normal {
+    background-blend-mode: normal;
+  }
+  .bg-blend-overlay {
+    background-blend-mode: overlay;
+  }
+  .bg-blend-saturation {
+    background-blend-mode: saturation;
+  }
+  .bg-blend-screen {
+    background-blend-mode: screen;
+  }
+  .bg-blend-soft-light {
+    background-blend-mode: soft-light;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  @media (hover: hover) {
+    .hover\:bg-purple-500:hover {
+      background-color: var(--color-purple-500);
+    }
   }
   @media (width >= 48rem) {
     .md\:mb-\[64px\] {
@@ -445,6 +667,24 @@
     .md\:flex-row {
       flex-direction: row;
     }
+    .md\:gap-\[48px\] {
+      gap: 48px;
+    }
+    .md\:bg-\[url\(\'\.\/assets\/tablet\/image-footer\.jpg\'\)\] {
+      background-image: url('./assets/tablet/image-footer.jpg');
+    }
+    .md\:bg-\[url\(\.\/assets\/tablet\/image-footer\.jpg\)\] {
+      background-image: url(./assets/tablet/image-footer.jpg);
+    }
+    .md\:py-\[80px\] {
+      padding-block: 80px;
+    }
+    .md\:pt-\[80px\] {
+      padding-top: 80px;
+    }
+    .md\:pb-\[64px\] {
+      padding-bottom: 64px;
+    }
     .md\:text-preset-1-tablet {
       font-family: var(--font-red-hat-display);
       font-size: 48px;
@@ -471,6 +711,9 @@
     }
   }
   @media (width >= 64rem) {
+    .lg\:-mb-\[72px\] {
+      margin-bottom: calc(72px * -1);
+    }
     .lg\:mb-\[72px\] {
       margin-bottom: 72px;
     }
@@ -482,6 +725,15 @@
     }
     .lg\:hidden {
       display: none;
+    }
+    .lg\:w-\[112px\] {
+      width: 112px;
+    }
+    .lg\:w-\[355px\] {
+      width: 355px;
+    }
+    .lg\:w-\[445px\] {
+      width: 445px;
     }
     .lg\:w-\[504px\] {
       width: 504px;
@@ -497,6 +749,39 @@
     }
     .lg\:w-\[1120px\] {
       width: 1120px;
+    }
+    .lg\:flex-row {
+      flex-direction: row;
+    }
+    .lg\:justify-between {
+      justify-content: space-between;
+    }
+    .lg\:gap-\[32px\] {
+      gap: 32px;
+    }
+    .lg\:gap-\[64px\] {
+      gap: 64px;
+    }
+    .lg\:bg-\[url\(\'\.\/assets\/desktop\/image-footer\.jpg\'\)\] {
+      background-image: url('./assets/desktop/image-footer.jpg');
+    }
+    .lg\:bg-\[url\(\.\/assets\/desktop\/image-footer\.jpg\)\] {
+      background-image: url(./assets/desktop/image-footer.jpg);
+    }
+    .lg\:py-\[96px\] {
+      padding-block: 96px;
+    }
+    .lg\:py-\[112px\] {
+      padding-block: 112px;
+    }
+    .lg\:pt-\[96px\] {
+      padding-top: 96px;
+    }
+    .lg\:pb-\[80px\] {
+      padding-bottom: 80px;
+    }
+    .lg\:text-left {
+      text-align: left;
     }
     .lg\:text-preset-1-desktop {
       font-family: var(--font-red-hat-display);

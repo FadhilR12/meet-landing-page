@@ -44,12 +44,12 @@
           <div
             class="gap-[16px] flex flex-col md:flex-row text-white items-center mb-[32px] md:mb-[64px]"
           >
-            <button class="bg-cyan-600 rounded-[29px] px-[40px] py-[16px]">
+            <button class="bg-cyan-600 rounded-[29px] px-[40px] text-preset-5 font-bold py-[16px]">
               <span>Download</span>
               <span class="text-cyan-300">v1.3</span>
             </button>
             <button
-              class="bg-purple-600 rounded-[29px] w-fit px-[40px] py-[16px]"
+              class="bg-purple-600 rounded-[29px] w-fit px-[40px] py-[16px] text-preset-5 font-bold"
             >
               What is it?
             </button>
@@ -90,7 +90,7 @@
           <div
             class="gap-[16px] flex flex-col md:flex-row text-white items-center mb-[32px] md:mb-[64px]"
           >
-            <button class="bg-cyan-600 rounded-[29px] px-[40px] py-[16px]">
+            <button class="bg-cyan-600 rounded-[29px] text-preset-5 font-bold px-[40px] py-[16px]">
               <span>Download</span>
               <span class="text-cyan-300">v1.3</span>
             </button>
@@ -110,11 +110,15 @@
     </section>
 
     <!-- 01 -->
-    <section class="flex flex-col items-center gap-[64px] mt-[32px] mb-[64px] lg:mb-[72px]">
+    <section
+      class="flex flex-col items-center gap-[64px] mt-[32px] mb-[64px] lg:mb-[72px]"
+    >
       <!-- number 01 -->
       <img src="./assets/number.png" alt="" class="" />
       <!-- image grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-[16px] w-[311px] md:w-[680px] lg:w-[1120px]">
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-[16px] w-[311px] md:w-[680px] lg:w-[1120px]"
+      >
         <img
           class="rounded-[10px]"
           src="./assets/desktop/image-woman-in-videocall.jpg"
@@ -137,23 +141,55 @@
         />
       </div>
       <!-- text 01 -->
-      <div class="flex flex-col gap-[32px] text-center w-[311px] items-center md:w-[504px] lg:w-[544px]">
+      <div
+        class="flex flex-col gap-[32px] text-center w-[311px] items-center md:w-[504px] lg:w-[544px]"
+      >
         <!-- title -->
         <div class="gap-[16px] flex flex-col md:w-[445px]">
-          <p class="text-preset-3-mobile md:text-preset-3-tablet lg:text-preset-3-desktop font-bold text-cyan-600">
+          <p
+            class="text-preset-3-mobile md:text-preset-3-tablet lg:text-preset-3-desktop font-bold text-cyan-600"
+          >
             BUILT FOR MODERN USE
           </p>
-          <p class="text-preset-2-mobile md:text-preset-2-tablet lg:text-preset-2-desktop font-bold">
+          <p
+            class="text-preset-2-mobile md:text-preset-2-tablet lg:text-preset-2-desktop font-bold"
+          >
             Smarter meetings, all in one place
           </p>
         </div>
         <!-- description -->
-        <p class="text-preset-4-mobile md:text-preset-4-tablet lg:text-preset-4-desktop text-slate-600">
+        <p
+          class="text-preset-4-mobile md:text-preset-4-tablet lg:text-preset-4-desktop text-slate-600"
+        >
           Send messages, share files, show your screen, and record your meetings
           — all in one workspace. Control who can join with invite-only team
           access, data encryption, and data export.
         </p>
       </div>
     </section>
+
+    <!-- 02 -->
+    <div
+      class="flex flex-col items-center gap-[64px] mt-[32px] -mb-[25px]"
+    >
+      <img src="./assets/number2.png" alt="" class="" />
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="h-full bg-cyan-600/70 bg-[url(./assets/mobile/image-footer.jpg)]/2 md:bg-[url(./assets/tablet/image-footer.jpg)] lg:bg-[url(./assets/desktop/image-footer.jpg)] bg-cover bg-no-repeat bg-center text-white items-center flex flex-col text-center py-[64px] px-[32px] bg-blend-multiply"
+    >
+      <div class="flex flex-col items-center gap-[24px] lg:gap-[32px] w-[311px] md:w-[504px] lg:flex-row lg:w-[1120px] lg:text-left lg:justify-between">
+        <p class="lg:w-[445px] text-preset-2-mobile md:text-preset-2-tablet lg:text-preset-2-desktop font-bold ">Experience more together</p>
+        <p class="text-preset-4-mobile lg:w-[355px] md:text-preset-4-tablet lg:text-preset-4-desktop">
+          Stay connected with reliable HD meetings and unlimited one-on-one and
+          group video sessions.
+        </p>
+        <button class="bg-purple-600 rounded-[29px] px-[40px] py-[16px] text-preset-5 font-bold">
+          <span class="">Download</span>
+          <span class="text-slate-300">v1.3</span>
+        </button>
+      </div>
+    </footer>
   </body>
 </html>
